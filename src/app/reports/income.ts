@@ -76,9 +76,9 @@ export class IncomeReport {
     this.treeSubscription = this.accountService.getAccountTreeWithPeriodBalance(this.startDate, this.endDate)
       .subscribe(tree => {
         this.sessionService.setLoading(false);
-        this.incomeAccount = tree.getAccountByName('Income', 1);
+        this.incomeAccount = tree.getAccountByName('Erträge', 1);
         this.incomeAccounts = tree.getFlattenedAccounts(this.incomeAccount);
-        this.expenseAccount = tree.getAccountByName('Expenses', 1);
+        this.expenseAccount = tree.getAccountByName('Aufwendungen', 1);
         this.expenseAccounts = tree.getFlattenedAccounts(this.expenseAccount);
       });
   }

@@ -592,21 +592,21 @@ export class AccountService {
   }
 
   createDefaultAccounts(tree: AccountTree, type: string): Observable<any> {
-    let assetAccount = tree.getAccountByName('Assets', 1);
+    let assetAccount = tree.getAccountByName('Vermögenswerte', 1);
     let equityAccount = tree.getAccountByName('Equity', 1);
-    let liabilityAccount = tree.getAccountByName('Liabilities', 1);
-    let incomeAccount = tree.getAccountByName('Income', 1);
-    let expenseAccount = tree.getAccountByName('Expenses', 1);
+    let liabilityAccount = tree.getAccountByName('Verbindlichkeiten', 1);
+    let incomeAccount = tree.getAccountByName('Erträge', 1);
+    let expenseAccount = tree.getAccountByName('Aufwendungen', 1);
 
     let currency = assetAccount.currency;
     let precision = assetAccount.precision;
 
     let accountNameMap = {
-      'Assets': [assetAccount.id, true],
+      'Vermögenswerte': [assetAccount.id, true],
       'Equity': [equityAccount.id, false],
-      'Liabilities': [liabilityAccount.id, false],
-      'Income': [incomeAccount.id, false],
-      'Expenses': [expenseAccount.id, true]
+      'Verbindlichkeiten': [liabilityAccount.id, false],
+      'Erträge': [incomeAccount.id, false],
+      'Aufwendungen': [expenseAccount.id, true]
     };
 
     let newAccounts = type === 'business' ? businessAccounts : personalAccounts;
@@ -621,7 +621,7 @@ export class AccountService {
         }
 
         // TODO find a cleaner way of doing this without making assumptions
-        if(['Assets', 'Equity', 'Liabilities', 'Income', 'Expenses'].indexOf(data.parent) > -1) {
+        if (['Vermögenswerte', 'Equity', 'Verbindlichkeiten', 'Erträge', 'Aufwendungen'].indexOf(data.parent) > -1) {
           accountNameMap[data.name] = [id, debitBalance];
         }
 

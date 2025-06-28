@@ -25,7 +25,7 @@ var rawAccounts = [
   new AccountApi({
     id: '2',
     orgId: '1',
-    name: 'Assets',
+    name: 'Vermögenswerte',
     currency: 'USD',
     precision: 2,
     debitBalance: true,
@@ -34,7 +34,7 @@ var rawAccounts = [
   new AccountApi({
     id: '3',
     orgId: '1',
-    name: 'Liabilities',
+    name: 'Verbindlichkeiten',
     currency: 'USD',
     precision: 2,
     debitBalance: false,
@@ -183,8 +183,8 @@ describe('AccountService', () => {
         expect(tree.rootAccount.totalNativeBalanceCost).toEqual(10000);
         expect(tree.rootAccount.totalNativeBalancePrice).toEqual(13000);
         expect(tree.rootAccount.children.length).toEqual(3);
-        expect(tree.rootAccount.children[0].name).toEqual('Assets');
-        expect(tree.rootAccount.children[0].fullName).toEqual('Assets');
+        expect(tree.rootAccount.children[0].name).toEqual('Vermögenswerte');
+        expect(tree.rootAccount.children[0].fullName).toEqual('Vermögenswerte');
         expect(tree.rootAccount.children[0].depth).toEqual(1);
         expect(tree.rootAccount.children[0].totalBalance).toEqual(3000);
         expect(tree.rootAccount.children[0].totalNativeBalanceCost).toEqual(10000);
@@ -193,8 +193,8 @@ describe('AccountService', () => {
         expect(tree.rootAccount.children[1].fullName).toEqual('Equity');
         expect(tree.rootAccount.children[1].depth).toEqual(1);
         expect(tree.rootAccount.children[1].totalBalance).toEqual(0);
-        expect(tree.rootAccount.children[2].name).toEqual('Liabilities');
-        expect(tree.rootAccount.children[2].fullName).toEqual('Liabilities');
+        expect(tree.rootAccount.children[2].name).toEqual('Verbindlichkeiten');
+        expect(tree.rootAccount.children[2].fullName).toEqual('Verbindlichkeiten');
         expect(tree.rootAccount.children[2].depth).toEqual(1);
         expect(tree.rootAccount.children[2].totalBalance).toEqual(0);
         let assets = tree.rootAccount.children[0];

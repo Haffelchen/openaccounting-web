@@ -78,17 +78,17 @@ export class BalanceSheetReport {
     this.treeSubscription = this.accountService.getAccountTreeAtDate(this.date)
       .subscribe(tree => {
         this.sessionService.setLoading(false);
-        this.assetAccount = tree.getAccountByName('Assets', 1);
+        this.assetAccount = tree.getAccountByName('Vermögenswerte', 1);
         this.assetAccounts = tree.getFlattenedAccounts(this.assetAccount);
 
-        this.liabilityAccount = tree.getAccountByName('Liabilities', 1);
+        this.liabilityAccount = tree.getAccountByName('Verbindlichkeiten', 1);
         this.liabilityAccounts = tree.getFlattenedAccounts(this.liabilityAccount);
 
         this.equityAccount = tree.getAccountByName('Equity', 1);
         this.equityAccounts = tree.getFlattenedAccounts(this.equityAccount);
 
-        let incomeAccount = tree.getAccountByName('Income', 1);
-        let expenseAccount = tree.getAccountByName('Expenses', 1);
+        let incomeAccount = tree.getAccountByName('Erträge', 1);
+        let expenseAccount = tree.getAccountByName('Aufwendungen', 1);
 
         let retainedEarnings = new Account({
           id: 'Retained Earnings',

@@ -56,7 +56,7 @@ export class DashboardPage implements OnInit {
     let tree$ = this.accountService.getAccountTreeWithPeriodBalance(periodStart);
 
     tree$.do(tree => {
-      let expenses = tree.getAccountByName('Expenses', 1);
+      let expenses = tree.getAccountByName('Aufwendungen', 1);
 
       this.expenseAmount = expenses.totalNativeBalanceCost;
 
@@ -75,8 +75,8 @@ export class DashboardPage implements OnInit {
       });
     })
     .switchMap(tree => {
-      let expenses = tree.getAccountByName('Expenses', 1);
-      let income = tree.getAccountByName('Income', 1);
+      let expenses = tree.getAccountByName('Aufwendungen', 1);
+      let income = tree.getAccountByName('Erträge', 1);
 
       return this.txService.getLastTransactions(this.numSplits * 4).take(1)
         .map(txs => {

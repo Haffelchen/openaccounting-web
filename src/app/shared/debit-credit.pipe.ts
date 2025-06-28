@@ -9,19 +9,19 @@ export class DebitCreditPipe implements PipeTransform {
 
   constructor() {
     this.debitNames = {
-      'Assets': 'Deposit',
-      'Liabilities': 'Payment',
+      'Vermögenswerte': 'Deposit',
+      'Verbindlichkeiten': 'Payment',
       'Equity': 'Decrease',
-      'Income': 'Deduction',
-      'Expenses': 'Expense'
+      'Erträge': 'Deduction',
+      'Aufwendungen': 'Expense'
     };
 
     this.creditNames = {
-      'Assets': 'Withdrawal',
-      'Liabilities': 'Charge',
+      'Vermögenswerte': 'Withdrawal',
+      'Verbindlichkeiten': 'Charge',
       'Equity': 'Increase',
-      'Income': 'Income',
-      'Expenses': 'Refund'
+      'Erträge': 'Erträge',
+      'Aufwendungen': 'Refund'
     };
   }
 

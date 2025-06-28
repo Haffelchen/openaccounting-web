@@ -107,7 +107,8 @@ export class SessionService {
         let matches = server.match(/\/\/([^\/]+)/);
 
         if(matches[1]) {
-          let url = 'wss://' + 
+          // let url = 'wss://' + 
+          let url = 'ws://' +
             matches[1] + 
             '/ws';
 

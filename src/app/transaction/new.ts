@@ -271,7 +271,7 @@ export class NewTransactionPage {
     // Get most used expense accounts
 
     let expenseAccounts = this.accountTree.getAccountAtoms(
-      this.accountTree.getAccountByName('Expenses', 1)
+      this.accountTree.getAccountByName('Aufwendungen', 1)
     );
 
     this.processAccounts('expenseAccounts', expenseAccounts, 2);
@@ -281,7 +281,7 @@ export class NewTransactionPage {
     // Get most used income accounts
 
     let incomeAccounts = this.accountTree.getAccountAtoms(
-      this.accountTree.getAccountByName('Income', 1)
+      this.accountTree.getAccountByName('Erträge', 1)
     );
 
     this.processAccounts('incomeAccounts', incomeAccounts, 2);
@@ -291,11 +291,11 @@ export class NewTransactionPage {
     // Get most used asset / liability accounts
 
     let assetAccounts = this.accountTree.getAccountAtoms(
-      this.accountTree.getAccountByName('Assets', 1)
+      this.accountTree.getAccountByName('Vermögenswerte', 1)
     );
 
     let liabilityAccounts = this.accountTree.getAccountAtoms(
-      this.accountTree.getAccountByName('Liabilities', 1)
+      this.accountTree.getAccountByName('Verbindlichkeiten', 1)
     );
 
     let paymentAccounts = assetAccounts.concat(liabilityAccounts);
@@ -307,7 +307,7 @@ export class NewTransactionPage {
     // Get most used asset accounts
 
     let assetAccounts = this.accountTree.getAccountAtoms(
-      this.accountTree.getAccountByName('Assets', 1)
+      this.accountTree.getAccountByName('Vermögenswerte', 1)
     );
 
     this.processAccounts('assetAccounts', assetAccounts, 3);
@@ -370,7 +370,7 @@ export class NewTransactionPage {
           str += 'Expense';
           break;
         case 'income':
-          str += 'Income';
+          str += 'Erträge';
           break;
         case 'openingBalance':
           str += 'Opening Balance';
