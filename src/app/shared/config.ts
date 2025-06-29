@@ -5,7 +5,7 @@ export class Config {
   defaultOrg: string;
   reportData: any;
   constructor(options: any = {}) {
-    this.server = options.server || 'https://api.openaccounting.io';
+    this.server = options.server || 'http://127.0.0.1:8080';
     this.email = options.email;
     this.password = options.password;
     this.defaultOrg = options.defaultOrg;

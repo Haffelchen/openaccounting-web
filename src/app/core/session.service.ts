@@ -47,7 +47,7 @@ export class SessionService {
     let server = this.configService.get('server');
 
     if(!server || server === 'https://openaccounting.io:8080/api') {
-      server = 'https://api.openaccounting.io';
+      server = 'http://127.0.0.1:8080';
       this.configService.put('server', server);
     }
 
