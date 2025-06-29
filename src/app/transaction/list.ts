@@ -136,17 +136,20 @@ export class TxListPage implements OnInit, AfterViewChecked {
     let clickedForm = false;
     let txId = undefined;
     let autocomplete = false;
-    event.path.forEach((elem) => {
-      if(elem.classList && elem.classList.contains('autocomplete')) {
-        autocomplete = true;
-      }
-      if(elem.id && elem.id.indexOf('form') === 0) {
-        clickedForm = true;
-        if(elem.id.indexOf('undefined') === -1) {
-          txId = elem.id.substring(4, 36);
+
+    if (event.path != null && event.path.length >= 0) {
+      event.path.forEach((elem) => {
+        if (elem.classList && elem.classList.contains('autocomplete')) {
+          autocomplete = true;
         }
-      }
-    });
+        if (elem.id && elem.id.indexOf('form') === 0) {
+          clickedForm = true;
+          if (elem.id.indexOf('undefined') === -1) {
+            txId = elem.id.substring(4, 36);
+          }
+        }
+      });
+    }
 
     if(autocomplete) {
       return;
