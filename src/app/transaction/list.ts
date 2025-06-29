@@ -137,7 +137,6 @@ export class TxListPage implements OnInit, AfterViewChecked {
     let txId = undefined;
     let autocomplete = false;
 
-    if (event.path != null && event.path.length >= 0) {
       event.path.forEach((elem) => {
         if (elem.classList && elem.classList.contains('autocomplete')) {
           autocomplete = true;
@@ -149,7 +148,6 @@ export class TxListPage implements OnInit, AfterViewChecked {
           }
         }
       });
-    }
 
     if(autocomplete) {
       return;
