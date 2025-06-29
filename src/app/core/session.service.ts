@@ -12,6 +12,8 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map';
 
+import { environment } from '../../environments/environment';
+
 @Injectable()
 export class SessionService {
 
@@ -107,8 +109,7 @@ export class SessionService {
         let matches = server.match(/\/\/([^\/]+)/);
 
         if(matches[1]) {
-          // let url = 'wss://' + 
-          let url = 'ws://' +
+          let url = (environment.secureWebsocket ? 'wss://' : 'ws://') + 
             matches[1] + 
             '/ws';
 
