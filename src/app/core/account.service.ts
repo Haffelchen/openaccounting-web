@@ -593,7 +593,7 @@ export class AccountService {
 
   createDefaultAccounts(tree: AccountTree, type: string): Observable<any> {
     let assetAccount = tree.getAccountByName('Vermögenswerte', 1);
-    let equityAccount = tree.getAccountByName('Equity', 1);
+    let equityAccount = tree.getAccountByName('Eigenkapital', 1);
     let liabilityAccount = tree.getAccountByName('Verbindlichkeiten', 1);
     let incomeAccount = tree.getAccountByName('Erträge', 1);
     let expenseAccount = tree.getAccountByName('Aufwendungen', 1);
@@ -603,7 +603,7 @@ export class AccountService {
 
     let accountNameMap = {
       'Vermögenswerte': [assetAccount.id, true],
-      'Equity': [equityAccount.id, false],
+      'Eigenkapital': [equityAccount.id, false],
       'Verbindlichkeiten': [liabilityAccount.id, false],
       'Erträge': [incomeAccount.id, false],
       'Aufwendungen': [expenseAccount.id, true]
@@ -621,7 +621,7 @@ export class AccountService {
         }
 
         // TODO find a cleaner way of doing this without making assumptions
-        if (['Vermögenswerte', 'Equity', 'Verbindlichkeiten', 'Erträge', 'Aufwendungen'].indexOf(data.parent) > -1) {
+        if (['Vermögenswerte', 'Eigenkapital', 'Verbindlichkeiten', 'Erträge', 'Aufwendungen'].indexOf(data.parent) > -1) {
           accountNameMap[data.name] = [id, debitBalance];
         }
 

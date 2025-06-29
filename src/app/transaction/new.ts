@@ -458,6 +458,15 @@ export class NewTransactionPage {
     this.fillEmptySplit();
   }
 
+  deleteSplit(index: number) {
+    let splits = this.form.get('splits') as FormArray;
+
+    if (splits.length > 2) {
+      splits.removeAt(index);
+      this.fillEmptySplit();
+    }
+  }
+
   fillEmptySplit() {
     // Total up splits and fill in any empty split with the leftover value
     let splits = this.form.get('splits') as FormArray;

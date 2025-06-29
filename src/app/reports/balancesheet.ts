@@ -84,7 +84,7 @@ export class BalanceSheetReport {
         this.liabilityAccount = tree.getAccountByName('Verbindlichkeiten', 1);
         this.liabilityAccounts = tree.getFlattenedAccounts(this.liabilityAccount);
 
-        this.equityAccount = tree.getAccountByName('Equity', 1);
+        this.equityAccount = tree.getAccountByName('Eigenkapital', 1);
         this.equityAccounts = tree.getFlattenedAccounts(this.equityAccount);
 
         let incomeAccount = tree.getAccountByName('Erträge', 1);

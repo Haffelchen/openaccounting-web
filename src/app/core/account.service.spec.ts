@@ -43,7 +43,7 @@ var rawAccounts = [
   new AccountApi({
     id: '4',
     orgId: '1',
-    name: 'Equity',
+    name: 'Eigenkapital',
     currency: 'USD',
     precision: 2,
     debitBalance: false,
@@ -189,8 +189,8 @@ describe('AccountService', () => {
         expect(tree.rootAccount.children[0].totalBalance).toEqual(3000);
         expect(tree.rootAccount.children[0].totalNativeBalanceCost).toEqual(10000);
         expect(tree.rootAccount.children[0].totalNativeBalancePrice).toEqual(13000);
-        expect(tree.rootAccount.children[1].name).toEqual('Equity');
-        expect(tree.rootAccount.children[1].fullName).toEqual('Equity');
+        expect(tree.rootAccount.children[1].name).toEqual('Eigenkapital');
+        expect(tree.rootAccount.children[1].fullName).toEqual('Eigenkapital');
         expect(tree.rootAccount.children[1].depth).toEqual(1);
         expect(tree.rootAccount.children[1].totalBalance).toEqual(0);
         expect(tree.rootAccount.children[2].name).toEqual('Verbindlichkeiten');

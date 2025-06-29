@@ -219,7 +219,9 @@ export class AdvancedEdit {
   creditVisible(index: number) {
     let splits = this.getSplitControls();
 
-    return this.visibleCredits[index] || splits[index].value.credit;
+    const response = this.visibleCredits[index] || splits[index].value.credit;
+
+    return response;
   }
 
   showDebit(index: number) {

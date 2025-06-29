@@ -11,7 +11,7 @@ export class DebitCreditPipe implements PipeTransform {
     this.debitNames = {
       'Vermögenswerte': 'Deposit',
       'Verbindlichkeiten': 'Payment',
-      'Equity': 'Decrease',
+      'Eigenkapital': 'Decrease',
       'Erträge': 'Deduction',
       'Aufwendungen': 'Expense'
     };
@@ -19,7 +19,7 @@ export class DebitCreditPipe implements PipeTransform {
     this.creditNames = {
       'Vermögenswerte': 'Withdrawal',
       'Verbindlichkeiten': 'Charge',
-      'Equity': 'Increase',
+      'Eigenkapital': 'Increase',
       'Erträge': 'Erträge',
       'Aufwendungen': 'Refund'
     };

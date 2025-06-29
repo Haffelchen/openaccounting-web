@@ -172,6 +172,9 @@
                           <input type="number" class="form-control" formControlName="credit" [ngClass]="{'positive': !accountMap[split.value.accountId]?.debitBalance, 'negative': accountMap[split.value.accountId]?.debitBalance}"/>
                       </div>
                   </div>
+                                    <div class="col-sm-1" *ngIf="i >= 2">
+                                      <a (click)="deleteSplit(i)">X</a>
+                                    </div>
                 </div>
                 <div class="row">
                   <div class="col-8">
